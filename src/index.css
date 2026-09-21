@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color-scheme: dark;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Earth & Digital Hybrid Aesthetic */
+:root {
+  --color-ocean: #0284c7;
+  --color-forest: #059669;
+  --color-sand: #fef3c7;
+  --color-slate-dark: #0f172a;
+}
+
+/* Glassmorphism custom styling */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(2, 132, 199, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(2, 132, 199, 0.15);
+}
+
+.glass-card-accent-green:hover {
+  border-color: rgba(5, 150, 105, 0.4);
+  box-shadow: 0 20px 35px -10px rgba(5, 150, 105, 0.15);
+}
+
+.glass-card-accent-amber:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 20px 35px -10px rgba(245, 158, 11, 0.15);
+}
+
+/* Earth glow gradients */
+.earth-mesh-bg {
+  background-color: #0b1120;
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(2, 132, 199, 0.18) 0px, transparent 50%),
+    radial-gradient(at 90% 20%, rgba(5, 150, 105, 0.14) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(2, 132, 199, 0.10) 0px, transparent 50%),
+    radial-gradient(at 80% 90%, rgba(245, 158, 11, 0.08) 0px, transparent 40%);
+}
+
+.text-gradient-ocean {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-forest {
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-earth {
+  background: linear-gradient(135deg, #38bdf8 0%, #34d399 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
