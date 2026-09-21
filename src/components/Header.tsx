@@ -18,6 +18,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
   }, []);
 
   const navLinks = [
+    { label: 'About Us', href: '/about.html' },
     { label: 'Services', href: '#services' },
     { label: 'Growth Strategy', href: '#strategy' },
     { label: 'ROI Calculator', href: '#roi-calculator' },
