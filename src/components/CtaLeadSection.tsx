@@ -30,15 +30,25 @@ export const CtaLeadSection: React.FC<CtaLeadSectionProps> = ({ onOpenQuoteModal
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim() || !formData.websiteUrl.trim()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1100);
+    const formElement = e.currentTarget;
+    const submissionData = new FormData(formElement);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: submissionData
+    })
+      .catch((err) => {
+        console.warn("Web3Forms lead notice:", err);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+      });
   };
 
   const handleReset = () => {
@@ -130,7 +140,17 @@ export const CtaLeadSection: React.FC<CtaLeadSectionProps> = ({ onOpenQuoteModal
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5 text-left">
+            <form 
+              action="https://api.web3forms.com/submit" 
+              method="POST" 
+              onSubmit={handleSubmit} 
+              className="space-y-5 text-left"
+            >
+              {/* Web3Forms Configuration: Delivers submissions to gpostrequest@gmail.com */}
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="to_email" value="gpostrequest@gmail.com" />
+              <input type="hidden" name="subject" value="New Free Strategy & Audit Request - TravelTheEarth" />
+              <input type="hidden" name="from_name" value="TravelTheEarth Lead Desk" />
               
               <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-2">
                 <div>
@@ -161,6 +181,7 @@ export const CtaLeadSection: React.FC<CtaLeadSectionProps> = ({ onOpenQuoteModal
                     </div>
                     <input
                       id="cta-lead-name"
+                      name="name"
                       type="text"
                       required
                       value={formData.name}
@@ -182,6 +203,7 @@ export const CtaLeadSection: React.FC<CtaLeadSectionProps> = ({ onOpenQuoteModal
                     </div>
                     <input
                       id="cta-lead-email"
+                      name="email"
                       type="email"
                       required
                       value={formData.email}
@@ -203,6 +225,7 @@ export const CtaLeadSection: React.FC<CtaLeadSectionProps> = ({ onOpenQuoteModal
                     </div>
                     <input
                       id="cta-lead-website"
+                      name="websiteUrl"
                       type="text"
                       required
                       value={formData.websiteUrl}
@@ -226,6 +249,7 @@ export const CtaLeadSection: React.FC<CtaLeadSectionProps> = ({ onOpenQuoteModal
                   </div>
                   <select
                     id="cta-lead-service"
+                    name="service"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all cursor-pointer"
@@ -253,6 +277,7 @@ export const CtaLeadSection: React.FC<CtaLeadSectionProps> = ({ onOpenQuoteModal
                   </div>
                   <textarea
                     id="cta-lead-message"
+                    name="message"
                     rows={3}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}

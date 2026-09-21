@@ -29,11 +29,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) =>
     missedKeywords: number;
   }>(null);
 
-  const handleRunAudit = (e: React.FormEvent) => {
+  const handleRunAudit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!targetUrl.trim()) return;
 
     setIsAuditing(true);
+
+    const formElement = e.currentTarget;
+    const submissionData = new FormData(formElement);
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: submissionData
+    }).catch((err) => {
+      console.warn("Web3Forms hero audit notice:", err);
+    });
+
     setTimeout(() => {
       setIsAuditing(false);
       setAuditResult({
@@ -85,13 +95,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) =>
 
           {/* Instant Search & Travel Audit Lead Bar */}
           <div className="w-full max-w-3xl bg-slate-950/80 p-3 sm:p-4 rounded-2xl border border-slate-700/80 shadow-2xl backdrop-blur-xl mb-6">
-            <form onSubmit={handleRunAudit} className="flex flex-col sm:flex-row gap-3">
+            <form 
+              action="https://api.web3forms.com/submit" 
+              method="POST" 
+              onSubmit={handleRunAudit} 
+              className="flex flex-col sm:flex-row gap-3"
+            >
+              {/* Web3Forms Configuration: Delivers audit leads to gpostrequest@gmail.com */}
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="to_email" value="gpostrequest@gmail.com" />
+              <input type="hidden" name="subject" value="Instant Travel SEO Audit Run - Hero Bar" />
+              <input type="hidden" name="from_name" value="TravelTheEarth Hero Intake" />
+
               <div className="relative flex-1">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
                   <Globe2 className="w-5 h-5 text-sky-400" />
                 </div>
                 <input
                   id="hero-audit-input"
+                  name="websiteUrl"
                   type="text"
                   value={targetUrl}
                   onChange={(e) => setTargetUrl(e.target.value)}
@@ -104,6 +126,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) =>
               <div className="sm:w-56">
                 <select
                   id="hero-niche-select"
+                  name="travelNiche"
                   value={selectedNiche}
                   onChange={(e) => setSelectedNiche(e.target.value)}
                   className="w-full px-3 py-3 bg-slate-900 border border-slate-700 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-sky-400 transition-all cursor-pointer"

@@ -48,20 +48,51 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
             </span>
           </div>
           <div className="flex items-center gap-5">
+            <div className="flex items-center gap-2 pr-3 border-r border-slate-800">
+              <a
+                href="https://www.facebook.com/mamunjuel1"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-slate-400 hover:text-sky-400 transition-colors"
+              >
+                <i className="fa-brands fa-facebook-f text-[11px]"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mamunjuel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-slate-400 hover:text-sky-400 transition-colors"
+              >
+                <i className="fa-brands fa-linkedin-in text-[11px]"></i>
+              </a>
+              <a
+                href="https://twitter.com/seoexpert_UF"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X / Twitter"
+                className="text-slate-400 hover:text-sky-400 transition-colors"
+              >
+                <i className="fa-brands fa-x-twitter text-[11px]"></i>
+              </a>
+            </div>
             <a
-              href="tel:+18008728350"
-              className="hover:text-sky-400 transition-colors flex items-center gap-1.5"
+              href="https://wa.me/8801918820001"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-emerald-400 transition-colors flex items-center gap-1.5"
             >
-              <Phone className="w-3 h-3 text-sky-400" />
-              +1 (800) 872-8350
+              <Phone className="w-3 h-3 text-emerald-400" />
+              +880 1918-820001
             </a>
             <span className="text-slate-600">|</span>
             <a
-              href="mailto:contact@traveltheearth.info"
+              href="mailto:gpostrequest@gmail.com"
               className="hover:text-sky-400 transition-colors flex items-center gap-1.5"
             >
               <Mail className="w-3 h-3 text-sky-400" />
-              contact@traveltheearth.info
+              gpostrequest@gmail.com
             </a>
           </div>
         </div>

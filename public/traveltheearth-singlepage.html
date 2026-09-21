@@ -557,7 +557,19 @@
             </button>
           </div>
 
-          <form id="lead-capture-form" onsubmit="handleLeadSubmit(event)" class="space-y-5 text-left">
+          <form 
+            id="lead-capture-form" 
+            action="https://api.web3forms.com/submit" 
+            method="POST" 
+            onsubmit="handleLeadSubmit(event)" 
+            class="space-y-5 text-left"
+          >
+            <!-- Web3Forms Configuration: Submissions sent directly to gpostrequest@gmail.com -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+            <input type="hidden" name="to_email" value="gpostrequest@gmail.com" />
+            <input type="hidden" name="subject" value="New Free Strategy & Audit Request - TravelTheEarth" />
+            <input type="hidden" name="from_name" value="TravelTheEarth Single Page" />
+
             <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-slate-800 gap-2">
               <div>
                 <span class="text-xs font-bold uppercase tracking-wider text-sky-400 block">Direct Agency Lead Capture</span>
@@ -724,7 +736,7 @@
       </div>
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-8 mt-8 border-t border-slate-850 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
-      <div>© 2026 TravelTheEarth Digital Agency. All rights reserved.</div>
+      <div>© 2026 All Rights Reserved | Designed & Managed by Mahfuz Rahman</div>
       <div class="flex gap-4">
         <span>Privacy Policy</span>
         <span>•</span>
@@ -748,13 +760,20 @@
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Analyzing Your Travel Niche...';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
+      // Submit via Web3Forms (delivers to gpostrequest@gmail.com)
+      const formData = new FormData(form);
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      }).catch(function(err) {
+        console.warn("Web3Forms lead transmission notice:", err);
+      }).finally(function() {
         form.classList.add('hidden');
         const successDiv = document.getElementById('lead-form-success');
         const msg = document.getElementById('lead-success-msg');
         msg.innerHTML = `Thank you, <strong class="text-white">${name}</strong>! Our travel SEO team is analyzing <strong class="text-sky-400">${websiteUrl}</strong> for <strong class="text-emerald-400">${service}</strong>. Your audit and link-gap report will arrive at <strong class="text-white">${email}</strong> within 24 hours.`;
         successDiv.classList.remove('hidden');
-      }, 1000);
+      });
     }
 
     function resetLeadForm() {

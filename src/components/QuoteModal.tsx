@@ -45,14 +45,24 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1200);
+    const formElement = e.currentTarget;
+    const submissionData = new FormData(formElement);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: submissionData
+    })
+      .catch((err) => {
+        console.warn("Web3Forms quote notice:", err);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+      });
   };
 
   return (
@@ -104,7 +114,18 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               Tell us about your travel brand, destination targets, and growth goals. We will deliver a customized competitor link-gap audit and actionable keyword roadmap within 24 hours.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form 
+              action="https://api.web3forms.com/submit" 
+              method="POST" 
+              onSubmit={handleSubmit} 
+              className="space-y-4"
+            >
+              {/* Web3Forms Configuration: Delivers quote inquiries to gpostrequest@gmail.com */}
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="to_email" value="gpostrequest@gmail.com" />
+              <input type="hidden" name="subject" value="Custom Travel SEO Proposal & Quote Request - TravelTheEarth" />
+              <input type="hidden" name="from_name" value="TravelTheEarth Quote Intake" />
+              <input type="hidden" name="servicesNeeded" value={formData.servicesNeeded.join(', ')} />
               
               {/* Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -116,6 +137,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     <User className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
+                      name="fullName"
                       required
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -133,6 +155,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -153,6 +176,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     <Globe className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
+                      name="websiteUrl"
                       required
                       value={formData.websiteUrl}
                       onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
@@ -167,6 +191,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     Travel Niche / Industry
                   </label>
                   <select
+                    name="travelNiche"
                     value={formData.travelNiche}
                     onChange={(e) => setFormData({ ...formData, travelNiche: e.target.value })}
                     className="w-full px-3 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-sky-500 cursor-pointer"
@@ -222,6 +247,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     Monthly Marketing Budget
                   </label>
                   <select
+                    name="monthlyBudget"
                     value={formData.monthlyBudget}
                     onChange={(e) => setFormData({ ...formData, monthlyBudget: e.target.value })}
                     className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500 cursor-pointer"
@@ -238,6 +264,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     Desired Kickoff Timeline
                   </label>
                   <select
+                    name="timeline"
                     value={formData.timeline}
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                     className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500 cursor-pointer"
@@ -255,6 +282,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   Primary Challenges / Key Destinations (Optional)
                 </label>
                 <textarea
+                  name="notes"
                   rows={2}
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}

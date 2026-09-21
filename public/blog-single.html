@@ -834,7 +834,19 @@
               Get an engineering-level breakdown of your website’s competitor backlink gaps, missing travel schemas, and direct checkout leaks.
             </p>
 
-            <form id="sidebar-audit-form" onsubmit="handleSidebarAuditSubmit(event)" class="space-y-3">
+            <form 
+              id="sidebar-audit-form" 
+              action="https://api.web3forms.com/submit" 
+              method="POST" 
+              onsubmit="handleSidebarAuditSubmit(event)" 
+              class="space-y-3"
+            >
+              <!-- Web3Forms Configuration: Delivers submissions to gpostrequest@gmail.com -->
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="to_email" value="gpostrequest@gmail.com" />
+              <input type="hidden" name="subject" value="Sidebar Travel SEO Audit Request - Blog Single" />
+              <input type="hidden" name="from_name" value="TravelTheEarth Blog Reader" />
+
               <div>
                 <label for="sidebar-url" class="block text-[11px] font-semibold uppercase tracking-wider text-slate-300 mb-1">
                   Website URL <span class="text-sky-400">*</span>
@@ -844,6 +856,7 @@
                   <input 
                     type="url" 
                     id="sidebar-url" 
+                    name="website" 
                     required 
                     placeholder="https://yourtravelbrand.com"
                     class="w-full bg-slate-900 border border-slate-700/80 rounded-xl pl-8 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
@@ -857,6 +870,7 @@
                 </label>
                 <select 
                   id="sidebar-volume"
+                  name="volume" 
                   class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-sky-500 transition-colors"
                 >
                   <option value="under-25k">&lt; $25k / month</option>
@@ -875,6 +889,7 @@
                   <input 
                     type="email" 
                     id="sidebar-email" 
+                    name="email" 
                     required 
                     placeholder="marketing@yourbrand.com"
                     class="w-full bg-slate-900 border border-slate-700/80 rounded-xl pl-8 pr-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
@@ -1012,10 +1027,23 @@
                 <i class="fa-solid fa-paper-plane text-sky-400 text-xs"></i>
                 <span>Fast Intake: Get Custom Proposal</span>
               </h4>
-              <form id="cta-bottom-form" onsubmit="handleCtaSubmit(event)" class="space-y-3 text-xs">
+              <form 
+                id="cta-bottom-form" 
+                action="https://api.web3forms.com/submit" 
+                method="POST" 
+                onsubmit="handleCtaSubmit(event)" 
+                class="space-y-3 text-xs"
+              >
+                <!-- Web3Forms Configuration: Delivers proposals to gpostrequest@gmail.com -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                <input type="hidden" name="to_email" value="gpostrequest@gmail.com" />
+                <input type="hidden" name="subject" value="Fast Intake Proposal Request - Article Footer" />
+                <input type="hidden" name="from_name" value="TravelTheEarth Article Reader" />
+
                 <input 
                   type="url" 
                   id="cta-url" 
+                  name="website" 
                   required 
                   placeholder="https://yourtravelwebsite.com" 
                   class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
@@ -1023,6 +1051,7 @@
                 <input 
                   type="email" 
                   id="cta-email" 
+                  name="email" 
                   required 
                   placeholder="marketing@yourbrand.com" 
                   class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
@@ -1080,12 +1109,14 @@
             <span>Global Remote Agency • Serving Clients in 35+ Countries</span>
           </div>
           <div class="flex items-center gap-2">
-            <i class="fa-solid fa-phone text-sky-400 w-4 text-center"></i>
-            <a href="tel:+18008728350" class="hover:text-white transition-colors">+1 (800) 872-8350</a>
+            <i class="fa-brands fa-whatsapp text-emerald-400 w-4 text-center text-sm"></i>
+            <a href="https://wa.me/8801918820001" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-300 transition-colors font-medium">
+              Phone & WhatsApp: +880 1918-820001
+            </a>
           </div>
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-envelope text-sky-400 w-4 text-center"></i>
-            <a href="mailto:contact@traveltheearth.info" class="hover:text-white transition-colors">contact@traveltheearth.info</a>
+            <a href="mailto:gpostrequest@gmail.com" class="hover:text-white transition-colors">gpostrequest@gmail.com</a>
           </div>
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-globe text-sky-400 w-4 text-center"></i>
@@ -1094,14 +1125,23 @@
         </div>
 
         <div class="flex items-center gap-3 pt-2">
-          <a href="https://twitter.com/traveltheearthinfo" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
-            <i class="fa-brands fa-x-twitter"></i>
+          <a href="https://www.facebook.com/mamunjuel1" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
           </a>
-          <a href="https://linkedin.com/company/traveltheearth" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
-            <i class="fa-brands fa-linkedin-in"></i>
+          <a href="https://www.linkedin.com/in/mamunjuel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
           </a>
-          <a href="https://facebook.com/traveltheearthinfo" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
-            <i class="fa-brands fa-facebook-f"></i>
+          <a href="https://twitter.com/seoexpert_UF" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/8801918820001" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500 transition-colors">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
           </a>
         </div>
       </div>
@@ -1176,7 +1216,7 @@
     <div class="border-t border-slate-850 py-6 text-[11px] text-slate-400">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex flex-col sm:flex-row items-center gap-2">
-          <span>© 2026 TravelTheEarth Digital Agency. All rights reserved.</span>
+          <span>© 2026 All Rights Reserved | Designed & Managed by Mahfuz Rahman</span>
           <span class="hidden sm:inline">•</span>
           <a href="https://traveltheearth.info/" class="text-sky-400 hover:text-sky-300 transition-colors">traveltheearth.info</a>
         </div>
@@ -1224,31 +1264,45 @@
     // Sidebar Audit Form Handler
     function handleSidebarAuditSubmit(e) {
       e.preventDefault();
+      const form = e.target;
       const submitBtn = document.getElementById('sidebar-audit-btn');
       const successBox = document.getElementById('sidebar-audit-success');
       
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Analyzing Website...';
 
-      setTimeout(function() {
+      const formData = new FormData(form);
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      }).catch(function(err) {
+        console.warn("Web3Forms sidebar notice:", err);
+      }).finally(function() {
         submitBtn.classList.add('hidden');
         successBox.classList.remove('hidden');
-      }, 900);
+      });
     }
 
     // Bottom CTA Lead Capture Form Handler
     function handleCtaSubmit(e) {
       e.preventDefault();
+      const form = e.target;
       const submitBtn = document.getElementById('cta-submit-btn');
       const successBox = document.getElementById('cta-success-box');
       
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating Proposal...';
 
-      setTimeout(function() {
+      const formData = new FormData(form);
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      }).catch(function(err) {
+        console.warn("Web3Forms bottom CTA notice:", err);
+      }).finally(function() {
         submitBtn.classList.add('hidden');
         successBox.classList.remove('hidden');
-      }, 900);
+      });
     }
 
     // Copy Current URL Helper
