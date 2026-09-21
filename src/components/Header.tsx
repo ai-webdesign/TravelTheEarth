@@ -18,13 +18,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
   }, []);
 
   const navLinks = [
-    { label: 'About Us', href: '/about.html' },
-    { label: 'Services', href: '#services' },
-    { label: 'Growth Strategy', href: '#strategy' },
-    { label: 'ROI Calculator', href: '#roi-calculator' },
-    { label: 'Case Studies', href: '#case-studies' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'SEO FAQs', href: '#faqs' },
+    { label: 'Home', href: 'index.html' },
+    { label: 'About Us', href: 'about.html' },
+    { label: 'Services', href: 'services.html' },
+    { label: 'Blog', href: 'blog.html' },
+    { label: 'Contact Us', href: 'contact.html' },
   ];
 
   return (

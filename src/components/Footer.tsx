@@ -185,17 +185,32 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
         {/* Quick Nav & Resources */}
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-white block mb-4">
-            Growth Resources
+            Site Navigation
           </span>
           <ul className="space-y-2.5">
             <li>
-              <a href="#strategy" className="hover:text-sky-400 transition-colors">
-                Our 4-Step Ranking Engine
+              <a href="index.html" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
+                Home →
               </a>
             </li>
             <li>
-              <a href="#roi-calculator" className="hover:text-sky-400 transition-colors">
-                Travel ROI Calculator
+              <a href="about.html" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
+                About Us →
+              </a>
+            </li>
+            <li>
+              <a href="services.html" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
+                Services (All 8 Core) →
+              </a>
+            </li>
+            <li>
+              <a href="blog.html" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
+                Blog & Resource Center →
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
+                Contact Us →
               </a>
             </li>
             <li>

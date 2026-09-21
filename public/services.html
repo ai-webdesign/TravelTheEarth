@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <script>
+    (function() {
+      try {
+        var origFetch = window.fetch;
+        var _fetch = typeof origFetch === 'function' ? origFetch.bind(window) : origFetch;
+        Object.defineProperty(window, 'fetch', {
+          get: function() { return _fetch; },
+          set: function(v) { _fetch = typeof v === 'function' ? v.bind(window) : v; },
+          configurable: true,
+          enumerable: true
+        });
+        if (window.Window && window.Window.prototype) {
+          try {
+            Object.defineProperty(window.Window.prototype, 'fetch', {
+              get: function() { return _fetch; },
+              set: function(v) { _fetch = typeof v === 'function' ? v.bind(window) : v; },
+              configurable: true,
+              enumerable: true
+            });
+          } catch (_) {}
+        }
+      } catch (_) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Growth Services for Travel Brands - TravelTheEarth Digital Agency</title>
+  <meta name="title" content="Growth Services for Travel Brands - TravelTheEarth Digital Agency" />
+  <meta name="description" content="Explore TravelTheEarth's 8 core digital growth services: high-DA travel guest posting, content strategy, travel PR syndication, technical travel SEO, Google Business Profile local rank, conversion-led UI/UX, and custom AI web development." />
+  <meta name="keywords" content="travel agency services, travel guest posting, travel blogger outreach, travel SEO services, travel content marketing, PR distribution travel, hotel SEO, tour operator web design, AI travel development, Google Business Profile travel" />
+  <meta name="author" content="TravelTheEarth Digital Agency" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://traveltheearth.info/services.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://traveltheearth.info/services.html" />
+  <meta property="og:title" content="Growth Services for Travel Brands - TravelTheEarth Digital Agency" />
+  <meta property="og:description" content="Discover end-to-end travel marketing services built to decouple boutique resorts, safari operators, and adventure companies from high OTA commissions." />
+  <meta property="og:site_name" content="TravelTheEarth Digital Agency" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&h=630&q=80" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://traveltheearth.info/services.html" />
+  <meta name="twitter:title" content="Growth Services for Travel Brands - TravelTheEarth Digital Agency" />
+  <meta name="twitter:description" content="Scale direct travel bookings with editorial link building, search-first content, technical SEO, and intelligent booking AI." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&h=630&q=80" />
+
+  <meta name="theme-color" content="#0284c7" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              ocean: '#0284c7',
+              forest: '#059669',
+              sand: '#fef3c7',
+              slate: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Service Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://traveltheearth.info/#organization",
+        "name": "TravelTheEarth Digital Agency",
+        "url": "https://traveltheearth.info/",
+        "logo": "https://traveltheearth.info/logo.png",
+        "description": "Full-service digital growth agency for travel, tourism, and hospitality brands delivering white-hat guest posting, technical SEO, and AI travel applications.",
+        "email": "contact@traveltheearth.info",
+        "telephone": "+1-800-872-8350",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://traveltheearth.info/services.html#webpage",
+        "url": "https://traveltheearth.info/services.html",
+        "name": "Core Growth Services - TravelTheEarth Digital Agency",
+        "description": "Comprehensive digital marketing and AI web development services for tour operators, luxury hotels, adventure brands, and travel marketplaces.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://traveltheearth.info/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://traveltheearth.info/services.html"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#guest-posting",
+        "serviceType": "Travel Guest Posting & Blogger Outreach",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "Genuine editorial outreach and guest posting on verified DA 40-80+ travel publications, digital nomad blogs, and hospitality platforms with natural contextual backlinks."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#blog-strategy",
+        "serviceType": "Travel Blog Strategy & Search Content",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "High-intent destination cluster development, comprehensive travel guides, itinerary mapping, and topical authority architecture that captures travelers during the dream and planning stages."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#pr-distribution",
+        "serviceType": "Travel Press Releases & PR Wire Syndication",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "Syndicated press release distribution to leading travel news desks, Google News, AP News, Benzinga, and tourism editorial aggregators to build brand trust and velocity."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#content-writing",
+        "serviceType": "High-Converting Travel Copywriting",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "Evocative, conversion-driven copy for destination landing pages, multi-day itinerary descriptions, resort amenities, and booking checkouts designed to lower abandonment."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#technical-seo",
+        "serviceType": "Travel Technical SEO & Schema Infrastructure",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "Core Web Vitals optimization for heavy visual assets, multi-currency hreflang configurations, Tour and Hotel JSON-LD schema, and mobile index crawling audits."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#google-business-profile",
+        "serviceType": "Google Business Profile Local SEO for Tourism",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "Local 3-Pack domination for excursion operators, rental outfitters, and luxury villas through geo-tagged image optimization, citation management, and review funnels."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#web-design",
+        "serviceType": "Direct-Booking Travel Web Design (UI/UX)",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "Bespoke digital booking platforms with visual story-driven interfaces, responsive booking engines, interactive day-by-day itineraries, and speed-optimized layouts."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://traveltheearth.info/services.html#ai-development",
+        "serviceType": "AI Web Development & Travel Concierge Systems",
+        "provider": { "@id": "https://traveltheearth.info/#organization" },
+        "description": "Intelligent traveler concierges, automated custom itinerary generators, multi-language conversational search, and dynamic pricing integration to maximize direct checkout."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .text-gradient-ocean {
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-earth {
+      background: linear-gradient(135deg, #38bdf8 0%, #10b981 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow-border:hover {
+      box-shadow: 0 0 25px -5px rgba(2, 132, 199, 0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-sky-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- ========================================================= -->
+  <!-- 1. HEADER NAVIGATION (5-PAGE MENU SYSTEM) -->
+  <!-- ========================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80 py-3.5 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 via-emerald-600 to-amber-500 p-0.5 shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center text-sky-400">
+            <i class="fa-solid fa-earth-americas text-lg"></i>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-xl tracking-tight text-white font-display">
+            Travel<span class="text-sky-400">TheEarth</span>
+            <span class="text-[10px] uppercase font-semibold tracking-widest px-1.5 py-0.5 rounded bg-sky-950/80 text-sky-300 border border-sky-800/60 ml-1">Agency</span>
+          </span>
+          <span class="text-[10px] text-slate-400 tracking-wider">Search • Outreach • AI Travel Web</span>
+        </div>
+      </a>
+
+      <!-- 5-Page Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1.5 bg-slate-900/80 border border-slate-800/80 px-3 py-1.5 rounded-full shadow-inner">
+        <!-- 1. Home -->
+        <a href="index.html" class="px-3.5 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-colors">
+          Home
+        </a>
+        
+        <!-- 2. About Us -->
+        <a href="about.html" class="px-3.5 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-colors">
+          About Us
+        </a>
+
+        <!-- 3. Services (ACTIVE PAGE) -->
+        <a href="services.html" class="px-4 py-1.5 text-xs font-bold text-sky-400 bg-sky-950/80 border border-sky-600/40 rounded-full shadow-sm shadow-sky-500/10 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+          <span>Services</span>
+        </a>
+
+        <!-- 4. Blog -->
+        <a href="blog.html" class="px-3.5 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-colors">
+          Blog
+        </a>
+
+        <!-- 5. Contact Us -->
+        <a href="contact.html" class="px-3.5 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-full transition-colors">
+          Contact Us
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="tel:+18008728350" class="text-xs font-medium text-slate-300 hover:text-white hidden xl:flex items-center gap-1.5 transition-colors">
+          <i class="fa-solid fa-phone text-sky-400 text-[11px]"></i>
+          <span>+1 (800) 872-8350</span>
+        </a>
+        <a href="#quote-form" class="px-5 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 transition-all shadow-md shadow-sky-900/30 flex items-center gap-1.5">
+          <span>Get Free Proposal</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-5 mt-3 backdrop-blur-xl">
+      <nav class="flex flex-col gap-2">
+        <a href="index.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-sky-400 rounded-lg">Home</a>
+        <a href="about.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-sky-400 rounded-lg">About Us</a>
+        <a href="services.html" class="px-3 py-2 text-sm font-bold text-sky-400 bg-sky-950/80 border border-sky-800/60 rounded-lg flex items-center justify-between">
+          <span>Services (Active)</span>
+          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+        </a>
+        <a href="blog.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-sky-400 rounded-lg">Blog</a>
+        <a href="contact.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-sky-400 rounded-lg">Contact Us</a>
+        <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+          <a href="#quote-form" onclick="toggleMobileMenu()" class="w-full text-center py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-600 to-emerald-600">
+            Request Growth Audit
+          </a>
+          <a href="tel:+18008728350" class="text-center text-xs text-slate-400 py-1">
+            Call Toll-Free: +1 (800) 872-8350
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- 2. HERO SECTION -->
+  <!-- ========================================================= -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <!-- Atmospheric Background Effects -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-sky-600/10 blur-[130px] rounded-full"></div>
+      <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-emerald-600/10 blur-[140px] rounded-full"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+      <!-- Breadcrumb -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-[11px] font-medium text-slate-400 mb-6">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <i class="fa-solid fa-chevron-right text-[9px] text-slate-600"></i>
+        <span class="text-sky-400 font-semibold">Specialized Services</span>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/70 border border-sky-800/60 text-xs font-semibold text-sky-300 mb-6">
+        <i class="fa-solid fa-compass text-amber-400"></i>
+        <span>Full-Stack Travel Growth & Authority Infrastructure</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white font-display tracking-tight max-w-4xl mx-auto leading-tight mb-6">
+        Precision Growth Engines for <br class="hidden sm:inline" />
+        <span class="text-gradient-ocean">Modern Travel & Hospitality</span> Brands
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+        From top-tier editorial guest posting and technical travel SEO to bespoke AI reservation concierges. We eliminate OTA commission dependency by turning your owned web assets into your most profitable booking engine.
+      </p>
+
+      <!-- Quick Metrics Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+        <div class="glass-card border border-slate-800/80 p-4 rounded-2xl text-center">
+          <div class="text-2xl font-bold text-white font-display">100%</div>
+          <div class="text-xs text-slate-400 mt-1">Manual Blogger Outreach</div>
+        </div>
+        <div class="glass-card border border-slate-800/80 p-4 rounded-2xl text-center">
+          <div class="text-2xl font-bold text-sky-400 font-display">DA 40–80+</div>
+          <div class="text-xs text-slate-400 mt-1">Verified Real Travel Sites</div>
+        </div>
+        <div class="glass-card border border-slate-800/80 p-4 rounded-2xl text-center">
+          <div class="text-2xl font-bold text-emerald-400 font-display">0% PBNs</div>
+          <div class="text-xs text-slate-400 mt-1">Strict White-Hat Guarantee</div>
+        </div>
+        <div class="glass-card border border-slate-800/80 p-4 rounded-2xl text-center">
+          <div class="text-2xl font-bold text-amber-400 font-display">3.4x</div>
+          <div class="text-xs text-slate-400 mt-1">Average Organic ROI (Yr 1)</div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#services-grid" class="px-6 py-3 rounded-xl text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 transition-all shadow-lg shadow-sky-600/30 flex items-center gap-2">
+          <span>Explore All 8 Services</span>
+          <i class="fa-solid fa-arrow-down text-[10px]"></i>
+        </a>
+        <a href="#pricing-matrix" class="px-6 py-3 rounded-xl text-xs font-bold text-slate-300 hover:text-white bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all flex items-center gap-2">
+          <span>View Pricing Packages</span>
+          <i class="fa-solid fa-table-cells text-[10px]"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 3. DEEP DIVE: ALL 8 CORE SERVICES (150+ WORDS EACH) -->
+  <!-- ========================================================= -->
+  <section id="services-grid" class="py-20 bg-slate-900/30 border-y border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/60 text-xs font-semibold text-emerald-300 mb-3">
+          <i class="fa-solid fa-cubes-stacked text-emerald-400"></i>
+          <span>Comprehensive Service Catalog</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">
+          Eight Specialized Disciplines Engineered for Tourism Dominance
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400 mt-3">
+          Generic marketing agencies fail in travel because they do not understand seasonal booking curves, traveler search intent, and the nuances of the destination discovery journey. Here is exactly how our 8 core capabilities elevate your business.
+        </p>
+      </div>
+
+      <!-- Services 1 & 2 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        
+        <!-- SERVICE 1: Guest Posting & Outreach -->
+        <article id="guest-posting" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-sky-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-sky-950/80 border border-sky-800/60 flex items-center justify-center text-sky-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-900/40 text-sky-300 border border-sky-800/50">
+                Core Link Pillar
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              1. Travel Guest Posting & Manual Blogger Outreach
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                Our flagship travel guest posting and blogger outreach service delivers genuine, contextual editorial backlinks from authentic travel blogs, digital nomad hubs, luxury travel magazines, and hospitality portals. We do not participate in link farms, private blog networks (PBNs), or automated spam networks. Every placement is negotiated through human-to-human editorial pitches tailored specifically to the host publication's audience and domain metrics (Domain Authority 40 to 80+, high real organic search traffic, and clean backlink profiles).
+              </p>
+              <p>
+                When a traveler searches for multi-day expeditions, boutique safari retreats, or private island charters, search algorithms reward sites that possess authentic domain trust. We embed your website naturally into destination roundups, comprehensive trip guides, gear reviews, and immersive travel memoirs. Each placement features hand-crafted, topic-relevant copy, contextual anchor text distribution, and do-follow links that provide lasting link equity, referral travelers, and algorithmic domain trust for years to come.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-sky-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Strict DA 40–80+ vetting with active organic traffic validation via Ahrefs</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 100% white-glove manual outreach with bespoke editorial pitches</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Natural anchor text diversification avoiding algorithmic over-optimization</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Permanent, do-follow links with replacement guarantees within 365 days</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Tour operators, boutique lodges, regional DMOs</span>
+            <a href="#quote-form" class="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1">Inquire for Links <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+        <!-- SERVICE 2: Blog Writing & Strategy -->
+        <article id="blog-writing" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-emerald-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-900/40 text-emerald-300 border border-emerald-800/50">
+                Topical Authority
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              2. Travel Blog Strategy & Search Content Creation
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                A vibrant, authority-packed travel blog is not an online journal—it is an inbound acquisition engine that intercepts prospective travelers while they are still in the daydreaming and research phase of their booking journey. Our travel editorial team designs high-intent topic clusters surrounding your destination or tour niches, such as "7-Day Lofoten Islands Photography Itinerary" or "Best Time to Visit Serengeti for the Great Migration." We target high-value, long-tail queries that competitors overlook.
+              </p>
+              <p>
+                Every article is produced by experienced travel copywriters who understand the sensory vocabulary of travel, packing recommendations, seasonal weather considerations, and local cultural context. We adhere strictly to Google’s Helpful Content system and E-E-A-T principles by incorporating authentic practical tips, route maps, FAQ schema, and compelling calls-to-action that funnel casual travel readers directly into your tour booking or hotel reservation pipelines.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-emerald-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Keyword discovery & intent mapping across dreaming, planning, and booking phases</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Long-form editorial guides (1,500 to 3,500 words) with custom visuals & maps</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Internal linking silos connecting high-traffic blog guides directly to tour sales</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Monthly content calendar production and performance refresh cycles</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Adventure travel companies, hospitality brands, destination portals</span>
+            <a href="#quote-form" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">Request Blog Plan <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Services 3 & 4 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        
+        <!-- SERVICE 3: Press Releases (PR Distribution) -->
+        <article id="press-releases" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-amber-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-amber-950/80 border border-amber-800/60 flex items-center justify-center text-amber-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-bullhorn"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-900/40 text-amber-300 border border-amber-800/50">
+                Wire Syndication
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              3. Press Releases & High-Authority PR Wire Distribution
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                When you launch a new luxury resort wing, introduce an eco-friendly carbon-neutral safari vehicle fleet, or open bookings for an exclusive polar expedition, standard social media posts rarely generate the institutional authority required to stand out. Our travel PR wire distribution service syndicates journalistic press announcements across premier financial news desks, syndicated travel editorial feeds, Google News, AP News, Benzinga, and hundreds of regional newspaper affiliates.
+              </p>
+              <p>
+                This institutional press velocity sends powerful freshness and trust signals to search engine algorithms while generating high-converting brand impressions among discerning travelers. Our media strategists craft compelling newsworthy angles that align your company's initiatives with broader global tourism trends such as regenerative travel, culinary immersion, or wellness retreats. We secure verified media pickups and provide transparent verification reports detailing live syndication URLs and indexing status.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-amber-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Professional AP-style press release drafting by seasoned travel PR copywriters</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Syndication across 350+ media terminals including Google News & Associated Press</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Guaranteed brand backlinks and institutional anchor verification</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Comprehensive PDF media clipping report within 48 hours of broadcast</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Resort launches, expedition expansions, funding announcements</span>
+            <a href="#quote-form" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">Distribute PR <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+        <!-- SERVICE 4: Content Writing -->
+        <article id="content-writing" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-sky-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-sky-950/80 border border-sky-800/60 flex items-center justify-center text-sky-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-file-lines"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-900/40 text-sky-300 border border-sky-800/50">
+                Conversion Copy
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              4. High-Converting Travel Content Writing & Copywriting
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                In the travel industry, visitors do not buy flights, rooms, or tour seats—they purchase anticipation, transformative moments, and memories. If your tour package pages or hotel suite descriptions are sterile bulleted lists, you will hemorrhage potential guests to aggressive online travel agencies (OTAs). Our travel content writing and conversion rate copywriting transforms generic product descriptions into persuasive, sensory-rich narratives that trigger bookings.
+              </p>
+              <p>
+                We craft meticulous day-by-day itinerary descriptions that balance practical travel logistics (elevation gain, transfer times, packing necessities, meal inclusions) with emotional storytelling that makes booking feel irresistible. Furthermore, we optimize landing page value propositions, trust badges, transparent pricing disclosures, and objection-handling FAQs to drastically diminish reservation abandonment rates and increase your average booking order value.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-sky-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Day-by-day itinerary copywriting that solves traveler friction points</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> High-converting landing pages tailored to specific traveler personas</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Luxury hotel room, suite, and experiential amenity descriptions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Persuasive microcopy for booking funnels and checkout confirmation steps</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Tour itineraries, destination landing pages, boutique hotel suites</span>
+            <a href="#quote-form" class="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1">Upgrade Tour Copy <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Services 5 & 6 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        
+        <!-- SERVICE 5: Technical SEO -->
+        <article id="technical-seo" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-emerald-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-900/40 text-emerald-300 border border-emerald-800/50">
+                Infrastructure & Schema
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              5. Technical SEO & Rich Travel Schema Architecture
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                Travel websites face unique technical search hurdles: thousands of high-resolution destination photos, dynamic seasonal pricing calendars, multiple language and currency variants, and complex booking engines that inadvertently generate faceted navigation indexing bloat. Our technical SEO team performs forensic audits to unblock crawl budgets, compress media via modern AVIF/WebP pipelines, and eliminate render-blocking scripts so your website scores 90+ on Core Web Vitals.
+              </p>
+              <p>
+                Crucially, we build out comprehensive, nested JSON-LD structured data utilizing Google's most sophisticated travel schemas: <code>Tour</code>, <code>TouristAttraction</code>, <code>Hotel</code>, <code>Trip</code>, <code>AggregateRating</code>, and <code>Event</code>. This markup informs search crawlers about tour durations, pricing tiers, coordinates, and real traveler reviews, enabling your listings to qualify for eye-catching rich snippets, star ratings, and Google Travel interactive cards that skyrocket organic click-through rates.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-emerald-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Core Web Vitals optimization and image CDN compression architecture</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Nested JSON-LD schema (Tour, Hotel, Trip, Rating) for rich search snippets</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> International multi-lingual hreflang & currency canonical configuration</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Faceted filter crawl budget cleanup eliminating duplicate index parameters</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Heavy image sites, multi-destination portals, booking platforms</span>
+            <a href="#quote-form" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">Audit Technical SEO <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+        <!-- SERVICE 6: Google Business Profile (GBP) -->
+        <article id="google-business-profile" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-amber-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-amber-950/80 border border-amber-800/60 flex items-center justify-center text-amber-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-900/40 text-amber-300 border border-amber-800/50">
+                Local 3-Pack Rank
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              6. Google Business Profile (GBP) Local Travel Domination
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                When international or domestic tourists land in a destination, their immediate instinct is opening Google Maps to search for "boat charter near me," "guided walking tours," or "boutique hotel downtown." If your Google Business Profile does not rank within the coveted Google Local 3-Pack, you surrender high-intent walking and last-minute booking revenue to OTAs and local competitors. Our localized travel SEO protocol locks down your regional visibility.
+              </p>
+              <p>
+                We optimize every profile touchpoint: primary and secondary category assignments, geo-tagged mobile imagery, booking button integrations, weekly promotional Google Posts highlighting seasonal departures, and standardized Name-Address-Phone (NAP) citations across leading travel directories like TripAdvisor, Yelp, Apple Maps, and Bing Places. In addition, we install automated post-trip review acquisition sequences that turn delighted travelers into glowing 5-star Google social proof.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-amber-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Google Local 3-Pack optimization targeting high-intent proximity queries</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Integration of Google Things to Do and Reserve with Google APIs</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Automated post-excursion SMS/Email review acquisition systems</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Global citation syndication across 50+ tier-1 travel directories and maps</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Day tour operators, rental outfitters, local excursion hubs</span>
+            <a href="#quote-form" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">Dominate Local Maps <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Services 7 & 8 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- SERVICE 7: Web Design (UI/UX) -->
+        <article id="web-design" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-sky-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-sky-950/80 border border-sky-800/60 flex items-center justify-center text-sky-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-900/40 text-sky-300 border border-sky-800/50">
+                Direct Booking UX
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              7. Direct-Booking Travel Web Design (UI/UX)
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                A high-converting travel website is a delicate synthesis of atmospheric luxury aesthetics and rigorous conversion ergonomics. We engineer custom web experiences designed specifically to combat the 20% to 30% commission loss inflicted by third-party distribution channels. Our UX designers map every traveler micro-moment: full-bleed panoramic hero visualizers, interactive day-by-day itinerary sliders, elevation and terrain graphs, weather widgets, and frictionless mobile reservation drawers.
+              </p>
+              <p>
+                Rather than relying on clunky generic booking plugins, we design seamless checkouts that feel effortless on mobile smartphones while traveling on 4G networks. Every site is built mobile-first with lightning-fast page speed, crisp typographic contrast, currency toggle flexibility, and strategic trust reassurance banners that give travelers the absolute confidence to book their dream vacations directly on your domain.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-sky-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Mobile-first booking experience optimized for quick reservation completion</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Interactive itinerary timelines with dynamic maps and elevation profiles</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Seamless synchronization with FareHarbor, Rezdy, Bokun, and Cloudbeds</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> High-conversion trust framework reducing cart abandonment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Luxury resorts, expedition operators, custom safari companies</span>
+            <a href="#quote-form" class="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1">Request UX Redesign <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+        <!-- SERVICE 8: AI Web Development -->
+        <article id="ai-development" class="glass-card border border-slate-800/80 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 glow-border flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-950/80 border border-emerald-800/60 flex items-center justify-center text-emerald-400 text-2xl shadow-inner">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-900/40 text-emerald-300 border border-emerald-800/50">
+                Next-Gen Automation
+              </span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-white font-display mb-3">
+              8. AI Web Development & Autonomous Travel Concierge Systems
+            </h3>
+            
+            <div class="text-slate-300 text-sm leading-relaxed space-y-3 mb-6">
+              <p>
+                Modern travelers expect instant answers at 2:00 AM regardless of time zone differences. If a prospect from London asks whether your Peruvian trekking expedition accommodates gluten intolerance or what equipment is included, waiting 12 hours for an email response guarantees a lost booking. We engineer custom AI travel web applications, including 24/7 intelligent itinerary concierges, automated quote generators, and real-time WhatsApp reservation agents.
+              </p>
+              <p>
+                Our systems are trained exclusively on your tour manuals, lodge rules, seasonal availability, and destination guides. Unlike generic chatbots that hallucinate false details, our proprietary retrieval-augmented generation (RAG) models cite exact prices, recommend optimal departure dates based on traveler fitness, automatically qualify inbound corporate leads, and seamlessly hand off VIP inquiries to your human sales directors inside your CRM.
+              </p>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/60 rounded-2xl p-4 mb-6">
+              <div class="text-xs font-semibold text-emerald-400 mb-2 uppercase tracking-wider">Key Deliverables & Standards:</div>
+              <ul class="text-xs text-slate-400 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Autonomous 24/7 AI concierge trained on your custom tour documentation</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Interactive dynamic itinerary builder generating bespoke PDF travel proposals</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Multi-lingual natural language inquiry translation in 40+ languages</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Automated CRM synchronization (HubSpot, Salesforce, ActiveCampaign)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Best for: Fast-scaling tour operators, luxury concierges, global aggregators</span>
+            <a href="#quote-form" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">Build AI Concierge <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 4. PRICING & PACKAGE COMPARISON TABLE -->
+  <!-- ========================================================= -->
+  <section id="pricing-matrix" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/60 border border-sky-800/60 text-xs font-semibold text-sky-300 mb-3">
+          <i class="fa-solid fa-tags text-sky-400"></i>
+          <span>Transparent Agency Investment</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">
+          Flexible Growth Packages Engineered for Your Scale
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400 mt-3">
+          No opaque retainers or hidden surprise fees. Choose the strategic momentum that matches your booking goals. All tiers include dedicated travel strategist oversight and transparent live performance dashboards.
+        </p>
+      </div>
+
+      <!-- Pricing Comparison Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
+        
+        <!-- PLAN 1: Starter -->
+        <div class="glass-card border border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Starter Tier</span>
+              <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300">Foundation</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white font-display mb-1">Regional Explorer</h3>
+            <p class="text-xs text-slate-400 mb-6">Ideal for emerging tour operators and single-property boutique hotels seeking reliable search authority.</p>
+            
+            <div class="flex items-baseline gap-1 mb-6 pb-6 border-b border-slate-800">
+              <span class="text-4xl font-extrabold text-white font-display">$1,450</span>
+              <span class="text-xs text-slate-400">/ month</span>
+            </div>
+
+            <div class="space-y-3 mb-8">
+              <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Package Scope Includes:</div>
+              <ul class="text-xs text-slate-300 space-y-2.5">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-0.5"></i>
+                  <span><strong>3 High-DA Travel Guest Posts</strong> (DA 40–60+, Real Traffic)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-0.5"></i>
+                  <span><strong>2 Long-Form Blog Articles</strong> (1,500 words each, SEO optimized)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-0.5"></i>
+                  <span><strong>Quarterly PR Distribution</strong> (1 syndication wire blast)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-0.5"></i>
+                  <span><strong>Basic Google Business Profile</strong> monthly audit & citation health</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-sky-400 mt-0.5"></i>
+                  <span><strong>Monthly Ranking & Traffic Dashboard</strong> with keyword movement</span>
+                </li>
+                <li class="flex items-start gap-2.5 text-slate-500">
+                  <i class="fa-solid fa-circle-xmark mt-0.5"></i>
+                  <span>Custom AI Concierge & Chatbot (Add-on available)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#quote-form" onclick="preselectPlan('Starter')" class="w-full py-3 rounded-xl text-center text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 border border-slate-700 transition-colors">
+            Select Starter Plan
+          </a>
+        </div>
+
+        <!-- PLAN 2: Growth (FEATURED) -->
+        <div class="relative glass-card border-2 border-sky-500/80 rounded-3xl p-8 flex flex-col justify-between shadow-2xl shadow-sky-950/50 scale-100 lg:-translate-y-2 bg-gradient-to-b from-slate-900/90 to-slate-950">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-sky-500 to-emerald-500 text-[10px] font-bold text-white uppercase tracking-wider shadow-md">
+            Most Popular Choice
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4 mt-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Growth Tier</span>
+              <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-sky-950 text-sky-300 border border-sky-800/60">Rapid Acceleration</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white font-display mb-1">Global Operator</h3>
+            <p class="text-xs text-slate-300 mb-6">Designed for established multi-day tour companies and luxury resorts ready to decouple from OTAs.</p>
+            
+            <div class="flex items-baseline gap-1 mb-6 pb-6 border-b border-slate-800">
+              <span class="text-4xl font-extrabold text-white font-display">$2,950</span>
+              <span class="text-xs text-slate-400">/ month</span>
+            </div>
+
+            <div class="space-y-3 mb-8">
+              <div class="text-xs font-semibold text-sky-400 uppercase tracking-wider">Package Scope Includes:</div>
+              <ul class="text-xs text-slate-200 space-y-2.5">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>7 Premium Travel Guest Posts</strong> (DA 50–75+, strict editorial vetting)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>4 Deep Search Pillar Guides</strong> (2,000+ words with custom travel itineraries)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Monthly Press Release Wire Blast</strong> (350+ news sites & AP News syndication)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Full Technical SEO & Core Web Vitals Fixes</strong> (Tour/Hotel Schema)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>Google Business Profile Local 3-Pack</strong> review management & geo-posts</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                  <span><strong>24/7 AI Traveler Concierge Setup</strong> with customized website widget</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#quote-form" onclick="preselectPlan('Growth')" class="w-full py-3.5 rounded-xl text-center text-xs font-bold text-white bg-gradient-to-r from-sky-600 via-sky-500 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 transition-all shadow-lg shadow-sky-600/30">
+            Start Growth Acceleration
+          </a>
+        </div>
+
+        <!-- PLAN 3: Dominator -->
+        <div class="glass-card border border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Dominator Tier</span>
+              <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-amber-950/60 text-amber-300 border border-amber-800/60">Enterprise Authority</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white font-display mb-1">Tourism Dominator</h3>
+            <p class="text-xs text-slate-400 mb-6">Unrivaled market presence for multi-destination operators, tourism boards, and luxury hospitality groups.</p>
+            
+            <div class="flex items-baseline gap-1 mb-6 pb-6 border-b border-slate-800">
+              <span class="text-4xl font-extrabold text-white font-display">$5,850</span>
+              <span class="text-xs text-slate-400">/ month</span>
+            </div>
+
+            <div class="space-y-3 mb-8">
+              <div class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Package Scope Includes:</div>
+              <ul class="text-xs text-slate-300 space-y-2.5">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+                  <span><strong>15 Elite Tier-1 Editorial Links</strong> (DA 60–85+, Condé Nast/National Geo tier blogs)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+                  <span><strong>8 Authority Content Hub Articles</strong> with custom interactive maps</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+                  <span><strong>Bi-Weekly Global PR Wire Syndication</strong> with guaranteed media placements</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+                  <span><strong>Custom AI Web Architecture</strong> (Itinerary generator, WhatsApp lead bot)</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+                  <span><strong>Bi-Weekly Strategy Calls & Dedicated Slack Channel</strong> with Julian Montgomery</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+                  <span><strong>Complete Conversion Rate Optimization (CRO)</strong> & checkout audit</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#quote-form" onclick="preselectPlan('Dominator')" class="w-full py-3 rounded-xl text-center text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 border border-slate-700 transition-colors">
+            Inquire for Enterprise Tier
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Trust Note Below Pricing -->
+      <div class="text-center text-xs text-slate-400 max-w-xl mx-auto">
+        <i class="fa-solid fa-lock text-emerald-400 mr-1.5"></i>
+        <span>No long-term lock-in contracts. All monthly engagements operate on a 30-day notice cycle with 100% transparent live deliverable tracking.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 5. STEP-BY-STEP ONBOARDING PROCESS -->
+  <!-- ========================================================= -->
+  <section class="py-20 bg-slate-900/40 border-t border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/60 text-xs font-semibold text-emerald-300 mb-3">
+          <i class="fa-solid fa-shoe-prints text-emerald-400"></i>
+          <span>Clear Execution Roadmap</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">
+          Our Seamless 4-Phase Client Onboarding Experience
+        </h2>
+        <p class="text-sm sm:text-base text-slate-400 mt-3">
+          We respect your time. Once onboarded, our specialized travel team requires less than 2 hours of your time per month to execute high-impact campaigns while you focus on delivering world-class traveler experiences.
+        </p>
+      </div>
+
+      <!-- Process Steps Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1 -->
+        <div class="glass-card border border-slate-800 rounded-3xl p-6 relative">
+          <div class="w-10 h-10 rounded-xl bg-sky-950 border border-sky-800/80 text-sky-400 font-bold text-sm flex items-center justify-center mb-5 font-display shadow-inner">
+            01
+          </div>
+          <h4 class="text-base font-bold text-white font-display mb-2">Discovery & Baseline Travel Audit</h4>
+          <span class="text-[11px] font-semibold text-sky-400 block mb-3 uppercase tracking-wider">Days 1 – 5</span>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            We extract historical search analytics, examine competitor backlink gaps, audit Core Web Vitals, identify OTA cannibalization queries, and align with your seasonal departure calendars.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="glass-card border border-slate-800 rounded-3xl p-6 relative">
+          <div class="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-800/80 text-emerald-400 font-bold text-sm flex items-center justify-center mb-5 font-display shadow-inner">
+            02
+          </div>
+          <h4 class="text-base font-bold text-white font-display mb-2">Authority & Keyword Roadmap</h4>
+          <span class="text-[11px] font-semibold text-emerald-400 block mb-3 uppercase tracking-wider">Days 6 – 10</span>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            We map out your 90-day editorial itinerary clusters, select target outreach publications, calibrate anchor text distributions, and deliver your transparent roadmap for sign-off.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="glass-card border border-slate-800 rounded-3xl p-6 relative">
+          <div class="w-10 h-10 rounded-xl bg-amber-950 border border-amber-800/80 text-amber-400 font-bold text-sm flex items-center justify-center mb-5 font-display shadow-inner">
+            03
+          </div>
+          <h4 class="text-base font-bold text-white font-display mb-2">Outreach Blitz & Content Launch</h4>
+          <span class="text-[11px] font-semibold text-amber-400 block mb-3 uppercase tracking-wider">Days 11 – 25</span>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Our outreach specialists initiate genuine pitch conversations, travel copywriters draft high-intent guides, PR wires are triggered, and technical schema fixes are deployed.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="glass-card border border-slate-800 rounded-3xl p-6 relative">
+          <div class="w-10 h-10 rounded-xl bg-purple-950 border border-purple-800/80 text-purple-400 font-bold text-sm flex items-center justify-center mb-5 font-display shadow-inner">
+            04
+          </div>
+          <h4 class="text-base font-bold text-white font-display mb-2">Live Dashboard & Scaling</h4>
+          <span class="text-[11px] font-semibold text-purple-400 block mb-3 uppercase tracking-wider">Days 26 – 30+</span>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            You receive live portal access to watch keyword ranks climb, monitor indexed backlink placements, analyze direct revenue conversions, and scale into adjacent destination markets.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 6. LEAD CAPTURE CTA FORM -->
+  <!-- ========================================================= -->
+  <section id="quote-form" class="py-20 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <div class="glass-card border-2 border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl relative">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/80 border border-sky-800/60 text-xs font-semibold text-sky-300 mb-3">
+            <i class="fa-solid fa-sparkles text-amber-400"></i>
+            <span>Complimentary 24-Hour Evaluation</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display tracking-tight">
+            Request Your Custom Travel Growth Proposal
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2">
+            Tell us about your travel or hospitality company. We'll audit your domain's backlink gap against your top three local or global competitors and return a strategic execution plan within 24 business hours.
+          </p>
+        </div>
+
+        <!-- Interactive Form -->
+        <form id="services-lead-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="contact-name" class="block text-xs font-semibold text-slate-300 mb-2">Your Name *</label>
+              <input type="text" id="contact-name" required placeholder="Julian Montgomery" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" />
+            </div>
+            <div>
+              <label for="contact-email" class="block text-xs font-semibold text-slate-300 mb-2">Work Email Address *</label>
+              <input type="email" id="contact-email" required placeholder="founder@yourtravelbrand.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="website-url" class="block text-xs font-semibold text-slate-300 mb-2">Website URL *</label>
+              <input type="url" id="website-url" required placeholder="https://yourtourcompany.com" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors" />
+            </div>
+            <div>
+              <label for="budget-level" class="block text-xs font-semibold text-slate-300 mb-2">Anticipated Monthly Growth Budget</label>
+              <select id="budget-level" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-sky-500 transition-colors">
+                <option value="Growth ($2,950/mo) - Most Popular">Growth Plan ($2,950 / month)</option>
+                <option value="Starter ($1,450/mo)">Starter Plan ($1,450 / month)</option>
+                <option value="Dominator ($5,850/mo)">Dominator Plan ($5,850 / month)</option>
+                <option value="Custom Project">Custom Project or One-Time AI Build</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Services Needed Checkboxes -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-3">Primary Services of Interest (Select All That Apply):</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs text-slate-300">
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="Guest Posting" checked class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>Guest Posting</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="Blog Strategy" checked class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>Blog Strategy</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="PR Wire" class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>PR Wire</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="Technical SEO" checked class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>Technical SEO</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="Google Business Profile" class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>GBP Local Rank</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="Web Design" class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>UI/UX Web Design</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="AI Web Dev" class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>AI Concierge</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+                <input type="checkbox" name="services" value="Content Writing" class="rounded border-slate-700 text-sky-500 focus:ring-0" />
+                <span>Content Writing</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label for="project-notes" class="block text-xs font-semibold text-slate-300 mb-2">Target Destination & Specific Booking Challenges</label>
+            <textarea id="project-notes" rows="3" placeholder="Tell us about your tour regions, current OTA commission pain points, and target booking goals..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-sky-600 via-sky-500 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 transition-all shadow-xl shadow-sky-950 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane text-amber-300"></i>
+            <span>Transmit Growth Request (24-Hour Review)</span>
+          </button>
+
+          <!-- Success Alert Box (Hidden Initially) -->
+          <div id="form-success-message" class="hidden p-4 rounded-2xl bg-emerald-950/80 border border-emerald-800 text-emerald-200 text-xs text-center">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-lg mb-1 block"></i>
+            <strong>Proposal Request Received!</strong> Our travel strategy directors are reviewing your domain metrics. Expect your competitive audit within 24 hours.
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 7. FOOTER SECTION -->
+  <!-- ========================================================= -->
+  <footer class="mt-auto bg-slate-950 border-t border-slate-800 pt-16 pb-8 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      
+      <!-- Brand & Contact Summary -->
+      <div class="lg:col-span-2 space-y-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-500 via-emerald-600 to-amber-500 p-0.5">
+            <div class="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center text-sky-400">
+              <i class="fa-solid fa-earth-americas text-sm"></i>
+            </div>
+          </div>
+          <span class="font-extrabold text-lg tracking-tight text-white font-display">
+            Travel<span class="text-sky-400">TheEarth</span>
+            <span class="text-[9px] uppercase font-semibold px-1.5 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800 ml-1">Agency</span>
+          </span>
+        </a>
+        
+        <p class="text-slate-400 leading-relaxed text-xs max-w-sm">
+          The premier growth partner for global travel brands. We build high-DA editorial guest posting pipelines, direct-booking SEO architectures, and next-generation AI travel concierges.
+        </p>
+
+        <div class="space-y-2 pt-2 text-xs text-slate-300">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-sky-400 w-4 text-center"></i>
+            <span>Global Remote Agency • Serving Clients in 35+ Countries</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-phone text-sky-400 w-4 text-center"></i>
+            <a href="tel:+18008728350" class="hover:text-white transition-colors">
+              Toll-Free: +1 (800) 872-8350
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-envelope text-sky-400 w-4 text-center"></i>
+            <a href="mailto:contact@traveltheearth.info" class="hover:text-white transition-colors">
+              contact@traveltheearth.info
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-globe text-sky-400 w-4 text-center"></i>
+            <a href="https://traveltheearth.info/" class="hover:text-white transition-colors">
+              https://traveltheearth.info/
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 pt-3">
+          <a href="https://twitter.com/traveltheearthinfo" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://linkedin.com/company/traveltheearth" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://facebook.com/traveltheearthinfo" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500 transition-colors">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 1: Complete 5-Page Site Navigation -->
+      <div class="text-left">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white font-display mb-4 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+          <span>Site Navigation</span>
+        </h4>
+        <ul class="space-y-2.5">
+          <li><a href="index.html" class="hover:text-sky-400 transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-sky-400 transition-colors">About Us</a></li>
+          <li><a href="services.html" class="text-sky-400 font-bold transition-colors">Services (Active)</a></li>
+          <li><a href="blog.html" class="hover:text-sky-400 transition-colors">Blog</a></li>
+          <li><a href="contact.html" class="hover:text-sky-400 transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Core Growth Solutions -->
+      <div class="text-left">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white font-display mb-4 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>8 Core Services</span>
+        </h4>
+        <ul class="space-y-2.5">
+          <li><a href="#guest-posting" class="hover:text-emerald-400 transition-colors">Guest Posting & Outreach</a></li>
+          <li><a href="#blog-writing" class="hover:text-emerald-400 transition-colors">Blog Writing & Strategy</a></li>
+          <li><a href="#press-releases" class="hover:text-emerald-400 transition-colors">PR Wire Distribution</a></li>
+          <li><a href="#content-writing" class="hover:text-emerald-400 transition-colors">Content Copywriting</a></li>
+          <li><a href="#technical-seo" class="hover:text-emerald-400 transition-colors">Technical SEO & Schema</a></li>
+          <li><a href="#google-business-profile" class="hover:text-emerald-400 transition-colors">GBP Local 3-Pack Rank</a></li>
+          <li><a href="#web-design" class="hover:text-emerald-400 transition-colors">Web Design (UI/UX)</a></li>
+          <li><a href="#ai-development" class="hover:text-emerald-400 transition-colors">AI Web Development</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Trust & Packages -->
+      <div class="text-left">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-white font-display mb-4 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+          <span>Growth Packages</span>
+        </h4>
+        <ul class="space-y-2.5">
+          <li><a href="#pricing-matrix" class="hover:text-sky-400 transition-colors">Starter Plan ($1,450/mo)</a></li>
+          <li><a href="#pricing-matrix" class="hover:text-sky-400 transition-colors">Growth Plan ($2,950/mo)</a></li>
+          <li><a href="#pricing-matrix" class="hover:text-sky-400 transition-colors">Dominator Plan ($5,850/mo)</a></li>
+          <li><a href="about.html" class="hover:text-sky-400 transition-colors">Ethical Link Matrix</a></li>
+          <li><a href="#quote-form" class="text-sky-400 hover:text-sky-300 font-semibold transition-colors">Get Free Growth Audit</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Ethical Guarantee Strip -->
+    <div class="border-t border-slate-800/80 bg-slate-900/40 py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-4 text-xs">
+        <div class="flex items-center gap-2 text-slate-300">
+          <i class="fa-solid fa-shield-check text-emerald-400 text-sm"></i>
+          <span class="font-semibold text-white">The TravelTheEarth Ethical Guarantee:</span>
+          <span>100% Genuine Editorial Placement • Zero Private Blog Networks (PBNs) • DoFollow Lifetime Live Links</span>
+        </div>
+        <div class="flex items-center gap-4 text-[11px] text-slate-400">
+          <span>Verified Travel Traffic Only</span>
+          <span>•</span>
+          <span>24-Hour Proposal Turnaround</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Legal -->
+    <div class="border-t border-slate-850 py-6 text-[11px] text-slate-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex flex-col sm:flex-row items-center gap-2">
+          <span>© 2026 TravelTheEarth Digital Agency. All rights reserved.</span>
+          <span class="hidden sm:inline">•</span>
+          <a href="https://traveltheearth.info/" class="text-sky-400 hover:text-sky-300 transition-colors">traveltheearth.info</a>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href="contact.html" class="hover:text-white transition-colors">Privacy Policy</a>
+          <span>•</span>
+          <a href="contact.html" class="hover:text-white transition-colors">Terms of Service</a>
+          <span>•</span>
+          <a href="contact.html" class="hover:text-white transition-colors">Editorial Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Scripts -->
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+
+    function preselectPlan(planName) {
+      const budgetDropdown = document.getElementById('budget-level');
+      if (budgetDropdown) {
+        if (planName === 'Starter') {
+          budgetDropdown.value = 'Starter ($1,450/mo)';
+        } else if (planName === 'Growth') {
+          budgetDropdown.value = 'Growth ($2,950/mo) - Most Popular';
+        } else if (planName === 'Dominator') {
+          budgetDropdown.value = 'Dominator ($5,850/mo)';
+        }
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      const successMsg = document.getElementById('form-success-message');
+      
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Transmitting Proposal Request...';
+      
+      setTimeout(function() {
+        submitBtn.classList.add('hidden');
+        successMsg.classList.remove('hidden');
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
