@@ -195,7 +195,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
           </span>
           <ul className="space-y-2.5">
             <li>
-              <a href="index.html" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
+              <a href="/" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
                 Home →
               </a>
             </li>
@@ -210,7 +210,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
               </a>
             </li>
             <li>
-              <a href="blog.html" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
+              <a href="/blog" className="hover:text-sky-400 transition-colors font-medium text-slate-300">
                 Blog & Resource Center →
               </a>
             </li>

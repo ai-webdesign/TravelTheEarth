@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   BookOpen, 
   Calendar, 
@@ -9,25 +9,53 @@ import {
   CheckCircle2, 
   Tag, 
   Share2, 
-  ExternalLink,
-  ChevronRight
+  RefreshCw,
+  AlertCircle
 } from 'lucide-react';
-import { BLOG_POSTS } from '../data/agencyData';
-import { BlogPost } from '../types';
+import DOMPurify from 'dompurify';
+import { getWordPressPosts, formatWordPressPost } from '../services/wordpress';
+import { FormattedBlogPost } from '../types/wordpress';
+import { BlogCard } from './BlogCard';
+import { BlogCardSkeleton } from './BlogCardSkeleton';
 
 interface BlogSectionProps {
   onOpenQuoteModal?: (serviceName?: string) => void;
 }
 
 export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenQuoteModal }) => {
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [posts, setPosts] = useState<FormattedBlogPost[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedPost, setSelectedPost] = useState<FormattedBlogPost | null>(null);
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
 
-  const handleShare = (post: BlogPost, e: React.MouseEvent) => {
+  const fetchLatestPosts = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const res = await getWordPressPosts({ page: 1, perPage: 3 });
+      const formatted = res.posts.map(formatWordPressPost);
+      setPosts(formatted);
+    } catch (err) {
+      console.error('Error fetching latest WordPress posts:', err);
+      setError('Unable to load latest articles from CMS. Please refresh or check back shortly.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchLatestPosts();
+  }, []);
+
+  const handleShare = (post: FormattedBlogPost, e: React.MouseEvent) => {
     e.stopPropagation();
-    navigator.clipboard?.writeText(`https://traveltheearth.info/blog/${post.slug}`);
-    setCopiedSlug(post.slug);
-    setTimeout(() => setCopiedSlug(null), 2500);
+    const shareUrl = `${window.location.origin}/blog/${post.slug}`;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareUrl);
+      setCopiedSlug(post.slug);
+      setTimeout(() => setCopiedSlug(null), 2500);
+    }
   };
 
   return (
@@ -53,103 +81,62 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenQuoteModal }) =>
             </p>
           </div>
 
-          <div className="flex items-center gap-3 self-start md:self-auto">
-            <span className="text-xs font-medium text-slate-400">
-              Updated Weekly for Travel Brands
-            </span>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 self-start md:self-auto">
+            <a
+              href="/blog"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-sky-500/50 text-xs font-bold text-sky-400 hover:text-white transition-all shadow-md group"
+            >
+              <span>View All 30+ Guides</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
 
-        {/* 3 Modern Blog Preview Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {BLOG_POSTS.map((post) => (
-            <article
-              key={post.id}
-              id={`blog-card-${post.id}`}
-              onClick={() => setSelectedPost(post)}
-              className="glass-panel rounded-2xl border border-slate-800/90 hover:border-sky-500/50 bg-slate-900/60 overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-sky-950/40 cursor-pointer group"
+        {/* Loading State */}
+        {loading && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+          </div>
+        )}
+
+        {/* Error State */}
+        {!loading && error && (
+          <div className="p-8 rounded-2xl bg-slate-900/80 border border-rose-900/50 text-center max-w-xl mx-auto">
+            <AlertCircle className="w-10 h-10 text-rose-400 mx-auto mb-3" />
+            <h3 className="text-base font-bold text-white mb-2">Notice</h3>
+            <p className="text-xs text-slate-300 mb-4">{error}</p>
+            <button
+              onClick={fetchLatestPosts}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white transition-colors cursor-pointer"
             >
-              {/* Image Container with Badges */}
-              <div className="relative h-52 w-full overflow-hidden bg-slate-950">
-                <img
-                  src={post.imageUrl}
-                  alt={post.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              <RefreshCw className="w-3.5 h-3.5" />
+              <span>Retry Loading</span>
+            </button>
+          </div>
+        )}
 
-                {/* Category Badge */}
-                <div className="absolute top-3.5 left-3.5">
-                  <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-sky-950/90 text-sky-300 border border-sky-700/80 backdrop-blur-md">
-                    {post.category}
-                  </span>
-                </div>
+        {/* Dynamic Real WordPress Blog Cards Grid */}
+        {!loading && !error && posts.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <BlogCard
+                key={post.id}
+                post={post}
+                onClick={() => setSelectedPost(post)}
+              />
+            ))}
+          </div>
+        )}
 
-                {/* Reading Time Badge */}
-                <div className="absolute top-3.5 right-3.5">
-                  <span className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-slate-950/80 text-slate-300 border border-slate-800 backdrop-blur-md">
-                    <Clock className="w-3 h-3 text-sky-400" />
-                    <span>{post.readTime}</span>
-                  </span>
-                </div>
-
-                {/* Published Date */}
-                <div className="absolute bottom-3 left-4 flex items-center gap-1.5 text-xs text-slate-300 font-medium">
-                  <Calendar className="w-3.5 h-3.5 text-slate-400" />
-                  <span>{post.date}</span>
-                </div>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white font-['Outfit'] group-hover:text-sky-300 transition-colors line-clamp-2 mb-3 leading-snug">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-xs sm:text-sm text-slate-300 line-clamp-3 leading-relaxed mb-4">
-                    {post.excerpt}
-                  </p>
-
-                  {/* Key Takeaway Bullet Highlights */}
-                  <div className="space-y-1.5 mb-5 pt-1 border-t border-slate-800/80">
-                    {post.keyTakeaways.slice(0, 2).map((takeaway, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-[11px] text-slate-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                        <span className="line-clamp-1">{takeaway}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Author Info & Read Button Footer */}
-                <div className="pt-4 border-t border-slate-800 flex items-center justify-between mt-auto">
-                  <div className="flex items-center gap-2.5">
-                    <img
-                      src={post.author.avatar}
-                      alt={post.author.name}
-                      className="w-8 h-8 rounded-full object-cover border border-sky-500/30"
-                    />
-                    <div>
-                      <span className="text-xs font-semibold text-white block">
-                        {post.author.name}
-                      </span>
-                      <span className="text-[10px] text-slate-400 block">
-                        {post.author.role}
-                      </span>
-                    </div>
-                  </div>
-
-                  <span className="inline-flex items-center gap-1 text-xs font-bold text-sky-400 group-hover:text-sky-300 group-hover:translate-x-1 transition-all">
-                    <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+        {/* Empty State */}
+        {!loading && !error && posts.length === 0 && (
+          <div className="p-12 rounded-2xl bg-slate-900/60 border border-slate-800 text-center">
+            <BookOpen className="w-10 h-10 text-slate-500 mx-auto mb-3" />
+            <p className="text-sm text-slate-300 font-medium">No published articles found at this time.</p>
+          </div>
+        )}
 
         {/* Bottom Banner for Editorial Inquiries */}
         <div className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-sky-950/30 to-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
@@ -178,10 +165,10 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenQuoteModal }) =>
 
       </div>
 
-      {/* Full Article Reader Modal */}
+      {/* Full Article Reader Modal for Seamless Instant Reading */}
       {selectedPost && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setSelectedPost(null)}
         >
           <div 
@@ -201,7 +188,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenQuoteModal }) =>
             <div className="mb-6">
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-sky-950 text-sky-300 border border-sky-800">
-                  {selectedPost.category}
+                  {selectedPost.categoryName}
                 </span>
                 <span className="text-xs text-slate-400 flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5" />
@@ -210,7 +197,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenQuoteModal }) =>
                 <span className="text-xs text-slate-400">•</span>
                 <span className="text-xs text-slate-400 flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5" />
-                  {selectedPost.date}
+                  {selectedPost.formattedDate}
                 </span>
               </div>
 
@@ -223,71 +210,80 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenQuoteModal }) =>
             <div className="flex items-center justify-between p-4 rounded-xl bg-slate-950/60 border border-slate-800 mb-6">
               <div className="flex items-center gap-3">
                 <img
-                  src={selectedPost.author.avatar}
-                  alt={selectedPost.author.name}
+                  src={selectedPost.authorAvatar}
+                  alt={selectedPost.authorName}
                   className="w-10 h-10 rounded-full object-cover border border-sky-500/40"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80';
+                  }}
                 />
                 <div>
                   <span className="text-sm font-bold text-white block">
-                    {selectedPost.author.name}
+                    {selectedPost.authorName}
                   </span>
                   <span className="text-xs text-slate-400 block">
-                    {selectedPost.author.role} • TravelTheEarth Agency
+                    {selectedPost.authorRole}
                   </span>
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={(e) => handleShare(selectedPost, e)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 font-medium transition-colors cursor-pointer"
-              >
-                <Share2 className="w-3.5 h-3.5 text-sky-400" />
-                <span>{copiedSlug === selectedPost.slug ? 'Link Copied!' : 'Share'}</span>
-              </button>
+              <div className="flex items-center gap-2">
+                <a
+                  href={`/blog/${selectedPost.slug}`}
+                  className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sky-950 hover:bg-sky-900 border border-sky-700/60 text-xs text-sky-300 font-medium transition-colors"
+                >
+                  <span>Permalink</span>
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+
+                <button
+                  type="button"
+                  onClick={(e) => handleShare(selectedPost, e)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 font-medium transition-colors cursor-pointer"
+                >
+                  <Share2 className="w-3.5 h-3.5 text-sky-400" />
+                  <span>{copiedSlug === selectedPost.slug ? 'Copied!' : 'Share'}</span>
+                </button>
+              </div>
             </div>
 
             {/* Hero Image in Modal */}
             <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden mb-6 border border-slate-800">
               <img
                 src={selectedPost.imageUrl}
-                alt={selectedPost.title}
+                alt={selectedPost.imageAlt || selectedPost.title}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&h=700&q=80';
+                }}
               />
             </div>
 
-            {/* Key Takeaways Box */}
-            <div className="p-5 rounded-2xl bg-sky-950/40 border border-sky-800/60 mb-6">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-sky-400 mb-2.5 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                <span>Executive Summary & Actionable Key Takeaways</span>
-              </h4>
-              <ul className="space-y-2">
-                {selectedPost.keyTakeaways.map((point, index) => (
-                  <li key={index} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>{point}</span>
-                  </li>
+            {/* Rendered WordPress HTML Content */}
+            <div
+              className="wp-content mb-8"
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(selectedPost.contentHtml || `<p>${selectedPost.cleanExcerpt}</p>`),
+              }}
+            />
+
+            {/* Categories & Tags */}
+            {selectedPost.categories.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2 mb-8 pt-4 border-t border-slate-800">
+                <Tag className="w-3.5 h-3.5 text-slate-500" />
+                {selectedPost.categories.map((cat) => (
+                  <a
+                    key={cat.id}
+                    href={`/category/${cat.slug}`}
+                    className="px-2.5 py-1 rounded-md bg-slate-950 hover:bg-slate-800 text-sky-400 text-xs border border-slate-800 transition-colors"
+                  >
+                    {cat.name}
+                  </a>
                 ))}
-              </ul>
-            </div>
-
-            {/* Full Body Article Content */}
-            <div className="space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed mb-8">
-              {selectedPost.content.map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-            </div>
-
-            {/* Tags */}
-            <div className="flex flex-wrap items-center gap-2 mb-8 pt-4 border-t border-slate-800">
-              <Tag className="w-3.5 h-3.5 text-slate-500" />
-              {selectedPost.tags.map((tag, idx) => (
-                <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-950 text-slate-400 text-xs border border-slate-800">
-                  #{tag}
-                </span>
-              ))}
-            </div>
+              </div>
+            )}
 
             {/* Modal Bottom CTA */}
             <div className="p-6 rounded-2xl bg-gradient-to-r from-sky-950 via-slate-900 to-emerald-950 border border-sky-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -303,13 +299,8 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenQuoteModal }) =>
               <button
                 type="button"
                 onClick={() => {
-                  const srv = selectedPost.category.includes('Guest Posting') 
-                    ? 'Guest Posting & Outreach' 
-                    : selectedPost.category.includes('AI') 
-                    ? 'AI Web Development & Automation' 
-                    : 'Search Engine Optimization (SEO & Technical SEO)';
                   setSelectedPost(null);
-                  onOpenQuoteModal?.(srv);
+                  onOpenQuoteModal?.('Travel SEO & Direct Booking Strategy');
                 }}
                 className="w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white bg-sky-600 hover:bg-sky-500 transition-colors shadow-lg flex items-center justify-center gap-2 cursor-pointer shrink-0"
               >
